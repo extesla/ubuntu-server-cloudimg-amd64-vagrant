@@ -23,8 +23,8 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  ### Install ubuntu/trusty64
-  config.vm.box = "ubuntu/trusty64"
+  ### Install ubuntu/utopic64
+  config.vm.box = "https://cloud-images.ubuntu.com/vagrant/utopic/current/utopic-server-cloudimg-amd64-vagrant-disk1.box"
 
   ### Host-to-Guest Port Forwarding
   config.vm.network :forwarded_port, guest: 80, host: 80
