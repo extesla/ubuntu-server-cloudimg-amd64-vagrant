@@ -1,5 +1,2 @@
-{% from "php/map.jinja" import php with context %}
-
-php-imagick:
-  pkg.installed:
-    - name: {{ php.imagick_pkg }}
+{% set state = 'imagick' %}
+{% include "php/installed.jinja" %}

@@ -5,7 +5,7 @@ php-formula
 0.2.0
 -----
 
-- Added .ng states
+- Added  states
 
 0.1.0
 -----

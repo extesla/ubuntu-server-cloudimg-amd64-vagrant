@@ -1,6 +1,6 @@
 # Manages the php-fpm pools config files
-{% from 'php/ng/map.jinja' import php with context %}
-{% from "php/ng/macro.jinja" import sls_block, serialize %}
+{% from 'php/map.jinja' import php with context %}
+{% from "php/macro.jinja" import sls_block, serialize %}
 
 # Simple path concatenation.
 {% macro path_join(file, root) -%}
@@ -11,14 +11,14 @@
 
 {% for pool, config in php.fpm.pools.items() %}
 {% set state = 'php_fpm_pool_conf_' ~ loop.index0 %}
-{% set fpath = path_join(pool, php.lookup.fpm.pools) %}
+{% set fpath = path_join(pool, php.fpm.config.pools.path) %}
 
 {{ state }}:
 {% if config.enabled %}
   file.managed:
     {{ sls_block(config.get('opts', {})) }}
     - name: {{ fpath }}
-    - source: salt://php/ng/files/php.ini
+    - source: salt://php/files/php.ini
     - template: jinja
     - context:
         config: {{ serialize(config.get('settings', {})) }}
@@ -29,6 +29,3 @@
 
 {% do pool_states.append(state) %}
 {% endfor %}
-
-
-

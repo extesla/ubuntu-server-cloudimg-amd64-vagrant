@@ -1,5 +1,2 @@
-{% from "php/map.jinja" import php with context %}
-
-php-mcrypt:
-  pkg.installed:
-    - name: {{ php.mcrypt_pkg }}
+{% set state = 'mcrypt' %}
+{% include "php/installed.jinja" %}

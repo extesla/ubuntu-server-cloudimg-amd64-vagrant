@@ -1,6 +1,6 @@
 # Template for installing packages.
-{% from "php/ng/map.jinja" import php with context %}
-{% from "php/ng/macro.jinja" import sls_block %}
+{% from "php/map.jinja" import php with context %}
+{% from "php/macro.jinja" import sls_block %}
 
 
 {% set pkginfo = php.lookup.pkgs.get(state) %}

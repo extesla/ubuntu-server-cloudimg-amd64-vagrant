@@ -1,7 +1,7 @@
 # Manages the php-fpm pools config files
-{% from "php/ng/map.jinja" import php with context %}
-{% from "php/ng/macro.jinja" import sls_block %}
-{% from "php/ng/fpm/pools_config.sls" import pool_states with context %}
+{% from "php/map.jinja" import php with context %}
+{% from "php/macro.jinja" import sls_block %}
+{% from "php/fpm/pools_config.sls" import pool_states with context %}
 
 {% macro file_requisites(states) %}
       {%- for state in states %}
@@ -10,8 +10,8 @@
 {% endmacro %}
 
 include:
-  - php.ng.fpm.service
-  - php.ng.fpm.pools_config
+  - php.fpm.service
+  - php.fpm.pools_config
 
 extend:
   php_fpm_service:
