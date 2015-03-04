@@ -27,7 +27,6 @@ file_roots:
     - /srv/salt
     - /srv/formulas/composer-formula
     - /srv/formulas/docker-formula
-    - /srv/formulas/hhvm-formula
     - /srv/formulas/php-formula
     - /srv/formulas/node-formula
 

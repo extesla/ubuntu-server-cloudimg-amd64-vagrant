@@ -26,16 +26,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ### Install ubuntu/utopic64
   config.vm.box = "https://cloud-images.ubuntu.com/vagrant/utopic/current/utopic-server-cloudimg-amd64-vagrant-disk1.box"
 
-  ### Host-to-Guest Port Forwarding
-  config.vm.network :forwarded_port, guest: 80, host: 80
-  config.vm.network :forwarded_port, guest: 443, host: 443
-  config.vm.network :forwarded_port, guest: 27017, host: 27017
+  ### Expose the port for SSH
+  config.vm.network :forwarded_port, guest: 22, host: 22
 
   ### VirtualBox Provider Configuration
   config.vm.provider :virtualbox do |vb|
     vb.gui = false
-    vb.customize ["modifyvm", :id, "--cpus", "2"]
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
   end
 
   ###
@@ -46,6 +42,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :salt do |salt|
     salt.minion_config  = "salt/development/minion"
     salt.run_highstate  = true
+    salt.verbose = true
   end
 
   ###

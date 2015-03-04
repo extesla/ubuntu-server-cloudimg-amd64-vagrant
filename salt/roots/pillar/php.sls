@@ -23,12 +23,12 @@
 php:
   use_ppa: True
   ppa_name: 'ondrej/php5'
-  mongo_version: "1.6.0"
-  ng:
-    cli:
-      ini:
-        opts:
-          replace: False
-        settings:
-          PHP:
-            memory_limit: 2048M
+  cli:
+    ini:
+      opts:
+        replace: False
+      settings:
+        PHP:
+          memory_limit: 2048M
+  mongo:
+    version: "1.6.0"

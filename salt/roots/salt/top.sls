@@ -38,18 +38,13 @@ base:
     - node-modules
 
     ### Install PHP
-    - php.ng
-    - php.ng.cli
-    - php.ng.curl
-    - php.ng.gd
-    - php.ng.intl
-    - php.ng.mbstring
-    - php.ng.mcrypt
-    - php.ng.memcached
+    - php.cli
+    - php.curl
+    - php.gd
+    - php.intl
+    - php.mcrypt
+    - php.memcached
     - php.mongo
-
-    ### Install HHVM
-    #- hhvm
 
     ### Install Composer
     - composer
