@@ -23,8 +23,8 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  ### Install ubuntu/utopic64
-  config.vm.box = "https://cloud-images.ubuntu.com/vagrant/utopic/current/utopic-server-cloudimg-amd64-vagrant-disk1.box"
+  ### Install VM box
+  config.vm.box = "https://cloud-images.ubuntu.com/vagrant/vivid/current/vivid-server-cloudimg-amd64-vagrant-disk1.box"
 
   ### Host-to-Guest Port Forwarding
   config.vm.network :forwarded_port, guest: 80, host: 80
@@ -37,6 +37,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--cpus", "2"]
     vb.customize ["modifyvm", :id, "--memory", "1024"]
   end
+
+  ###
+  ### Modify initctl to simply return "true" when running under a virtual machine.
+  ###
+  config.vm.provision "shell", inline: "sudo dpkg-divert --local --rename --add /sbin/initctl"
+  config.vm.provision "shell", inline: "ln -s /bin/true /sbin/initctl"
 
   ###
   ### Provision the system baseline using Salt Stack, also assign folders to

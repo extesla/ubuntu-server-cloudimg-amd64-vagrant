@@ -1,4 +1,49 @@
 node:
+
+  ###
+  ### install_from:
+  ###
+  ###   default value:
+  ###     ppa
+  ###
+  ###   possible values:
+  ###     ppa, source
+  ###
+  ###   description:
+  ###     Where to install node from, e.g. source or ppa
+  ###
+  install_from: ppa
+
+  ###
+  ### version:
+  ###
+  ###   default value:
+  ###     None
+  ###
+  ###   description:
+  ###     The version of node to install.
+  ###
   version: 0.10.22
-  checksum: d7c6a39dfa714eae1f8da7a00c9a07efd74a03b3
+
+  ###
+  ### checksum:
+  ###
+  ###   default value:
+  ###     None
+  ###
+  ###   description:
+  ###     Source install only. The SHA checksum of the .tar.gz source files.
+  ###
+  checksum: 000c08c98339227f626c12407d7eb52f149e2109
+
+  ###
+  ### make_jobs:
+  ###
+  ###   default value:
+  ###     1
+  ###
+  ###   description:
+  ###     Source install only. The number of processes to apply to the build
+  ###     process of node.
+  ###
   make_jobs: 2
