@@ -22,7 +22,7 @@
 
 php:
   use_ppa: True
-  ppa_name: 'ondrej/php5'
+  ppa_name: 'ondrej/php5-5.6'
   mongo_version: "1.6.0"
   ng:
     cli:

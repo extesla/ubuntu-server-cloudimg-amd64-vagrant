@@ -38,7 +38,6 @@ base:
     - node-modules
 
     ### Install PHP
-    - php.ng
     - php.ng.cli
     - php.ng.curl
     - php.ng.gd
