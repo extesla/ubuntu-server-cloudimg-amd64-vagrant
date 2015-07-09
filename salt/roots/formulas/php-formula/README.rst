@@ -24,6 +24,13 @@ Installs the php package.
 -----------
 
 Installs the php-apc package.
+Disabled by default on opensuse need server:php repo
+
+``php.apcu``
+------------
+
+Installs the php-apcu package.
+Disabled by default on opensuse need server:php repo
 
 ``php.adodb``
 -------------
@@ -34,11 +41,17 @@ Installs the php-adodb package.
 -----------
 
 Installs the php-cgi package.
+Disabled on opensuse not available, only fastcgi
 
 ``php.cli``
 -----------
 
 Installs the php-cli package.
+
+``php.composer``
+-----------
+
+Installs [composer](https://getcomposer.org) and keeps it updated.
 
 ``php.curl``
 ------------
@@ -67,6 +80,7 @@ Installs the php-intl package.
 ---------------
 
 Installs the php-imagick package.
+Disabled on opensuse not available.
 
 ``php.imap``
 ------------
@@ -98,11 +112,13 @@ Installs the php-mcrypt package.
 ----------------
 
 Installs the php-memcache package.
+Disabled on opensuse need server:php:extensions repo
 
 ``php.memcached``
 -----------------
 
 Installs the php-memcached package.
+Disabled on opensuse need server:php:extensions repo
 
 ``php.mysql``
 -------------
@@ -113,6 +129,7 @@ Installs the php-mysql package.
 ---------------
 
 Installs the php-mysqlnd package.
+Disabled on opensuse no package.
 
 ``php.pear``
 ------------
@@ -123,6 +140,7 @@ Installs the php-pear package.
 ------------
 
 Installs the php-redis package.
+Disabled on opensuse need server:php:extensions repo
 
 ``php.pgsql``
 -------------
@@ -134,6 +152,11 @@ Installs the php-pgsql package.
 
 Installs the php-soap package.
 
+``php.sqlite``
+--------------
+
+Installs the php-sqlite package,
+
 ``php.suhosin``
 ---------------
 
@@ -143,6 +166,7 @@ Installs the php-suhosin package.
 -------------
 
 Installs the php-mongo package.
+Disabled on opensuse need server:php:extensions repo
 
 ``php.xml``
 -----------
@@ -176,11 +200,19 @@ Installs the php-adodb package.
 --------------
 
 Installs the php-apc package.
+Disabled on opensuse need server:php repo
+
+``php.ng.apcu``
+---------------
+
+Installs the php-apcu package.
+Disabled on opensuse need server:php repo
 
 ``php.ng.cgi``
 --------------
 
 Installs the php-cgi package.
+Disabled on opensuse only php5-fastcgi available.
 
 ``php.ng.cli``
 --------------
@@ -248,6 +280,7 @@ Installs the php-gd package.
 ------------------
 
 Installs the php-imagick package.
+Disabled on opensuse no package.
 
 ``php.ng.imap``
 ---------------
@@ -284,11 +317,15 @@ Installs the php-mcrypt package.
 -------------------
 
 Installs the php-memcache package.
+Disabled on opensuse need server:php:extensions repo
+
 
 ``php.ng.memcached``
 --------------------
 
 Installs the php-memcached package.
+Disabled on opensuse need server:php:extensions repo
+
 
 ``php.ng.mysql``
 ----------------
@@ -299,6 +336,7 @@ Installs the php-mysql package.
 ------------------
 
 Installs the php-mysqlnd package.
+Disabled on opensuse no package.
 
 ``php.ng.pear``
 ---------------
@@ -309,6 +347,8 @@ Installs the php-pear package.
 ---------------
 
 Installs the php-redis package.
+Disabled on opensuse need server:php:extensions repo
+
 
 ``php.ng.pgsql``
 ----------------
@@ -319,6 +359,11 @@ Installs the php-pgsql package.
 ---------------
 
 Installs the php-soap package.
+
+``php.ng.sqlite``
+-----------------
+
+Installs the php-sqlite package,
 
 ``php.ng.suhosin``
 ------------------

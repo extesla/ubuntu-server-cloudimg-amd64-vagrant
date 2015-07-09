@@ -4,11 +4,15 @@
             'pkgs': {
                 'php': 'php5',
                 'apc': 'php-apc',
+                'apcu': 'php5-apcu',
                 'cgi': 'php5-cgi',
                 'cli': 'php5-cli',
+                'oauth': 'php5-oauth',
+                'apache2': 'libapache2-mod-php5',
                 'curl': 'php5-curl',
                 'fpm': 'php5-fpm',
                 'gd': 'php5-gd',
+                'geoip': 'php5-geoip',
                 'intl': 'php5-intl',
                 'mbstring': 'php5',
                 'mcrypt': 'php5-mcrypt',
@@ -17,7 +21,11 @@
                 'mysql': 'php5-mysql',
                 'mysqlnd': 'php5-mysqlnd',
                 'pear': 'php-pear',
+                'pspell': 'php5-pspell',
                 'soap': 'php-soap',
+                'sqlite': 'php5-sqlite',
+                'xdebug': 'php5-xdebug',
+                'xsl': 'php5-xsl',
                 'xml': 'php5-xmlrpc',
                 'redis': 'php5-redis',
                 'imagick': 'php5-imagick',
@@ -26,7 +34,7 @@
                 'adodb': 'php5-adodb',
                 'pgsql': 'php5-pgsql',
                 'ldap': 'php5-ldap',
-                'json': 'php5-json',
+                'json': 'php5-json'
             },
             'fpm': {
                 'conf': '/etc/php5/fpm/php-fpm.conf',
@@ -37,20 +45,25 @@
                     ('global', odict([
                         ('pid', '/var/run/php5-fpm.pid'),
                         ('error_log', '/var/log/php5-fpm.log'),
-                        ('include', '/etc/php5/fpm/pool.d/*.conf'),
                     ])),
+                    ('include', '/etc/php5/fpm/pool.d/*.conf'),
                 ]),
             },
             'cli': {
                 'ini': '/etc/php5/cli/php.ini',
+            },
+            'apache2': {
+                'ini': '/etc/php5/apache2/php.ini',
             },
         },
         'RedHat': {
             'pkgs': {
                 'php': 'php',
                 'apc': 'php-pecl-apc',
+                'apcu': 'php-pecl-apcu',
                 'cgi': 'php-cgi',
                 'cli': 'php-cli',
+                'oauth': 'php-oauth',
                 'curl': ['php-common', 'curl'],
                 'fpm': 'php-fpm',
                 'gd': 'php-gd',
@@ -63,6 +76,7 @@
                 'mysqlnd': 'php-mysqlnd',
                 'pear': 'php-pear',
                 'soap': 'php-soap',
+                'sqlite': 'php5-sqlite',
                 'xml': 'php-xml',
                 'redis': 'php-redis',
                 'imagick': 'php-imagick',
@@ -82,8 +96,83 @@
                     'global': {
                         'pid': '/var/run/php-fpm/php-fpm.pid',
                         'error_log': '/var/log/php-fpm/error.log',
-                        'include': '/etc/php-fpm.d/*.conf',
                     },
+                    'include': '/etc/php-fpm.d/*.conf',
+                },
+            },
+            'cli': {
+                'ini': '/etc/php.ini',
+            },
+        },
+        'Suse': {
+            'pkgs': {
+                'php': 'php5',
+                'apache2': 'apache2-mod_php5',
+                'cli': 'php5',
+                'oauth': 'php5-oauth',
+                'curl': 'php5-curl',
+                'fpm': 'php5-fpm',
+                'gd': 'php5-gd',
+                'intl': 'php5-intl',
+                'mbstring': 'php5-mbstring',
+                'mcrypt': 'php5-mcrypt',
+                'mysql': 'php5-mysql',
+                'pear': 'php5-pear',
+                'soap': 'php5-soap',
+                'sqlite': 'php5-sqlite',
+                'xml': ['php5-xmlreader','php5-xmlwriter','php5-xmlrpc'],
+                'suhosin': 'php5-suhosin',
+                'imap': 'php5-imap',
+                'adodb': 'php5-dba',
+                'pgsql': 'php5-pgsql',
+                'ldap': 'php5-ldap',
+                'json': 'php5-json',
+            },
+            'fpm': {
+                'conf': '/etc/php-fpm.conf',
+                'ini': '/etc/php.ini',
+                'pools': '/etc/php-fpm.d',
+                'service': 'php-fpm',
+                'defaults': {
+                    'global': {
+                        'pid': '/var/run/php-fpm/php-fpm.pid',
+                        'error_log': '/var/log/php-fpm/error.log',
+                    },
+                    'include': '/etc/php-fpm.d/*.conf',
+                },
+            },
+            'cli': {
+                'ini': '/etc/php.ini',
+            },
+        },
+        'Arch': {
+            'pkgs': {
+                'php': 'php',
+                'apcu': 'php-apcu',
+                'cgi': 'php-cgi',
+                'curl': 'curl',
+                'fpm': 'php-fpm',
+                'gd': 'php-gd',
+                'intl': 'php-intl',
+                'mcrypt': 'php-mcrypt',
+                'memcache': 'php-memcache',
+                'memcached': 'php-memcached',
+                'pear': 'php-pear',
+                'sqlite': 'php-sqlite',
+                'pgsql': 'php-pgsql',
+                'ldap': 'php-ldap',
+            },
+            'fpm': {
+                'conf': '/etc/php/php-fpm.conf',
+                'ini': '/etc/php/php.ini',
+                'pools': '/etc/php/fpm.d',
+                'service': 'php-fpm',
+                'defaults': {
+                    'global': {
+                        'pid': '/run/php-fpm/php-fpm.pid',
+                        'error_log': 'log/php-fpm.log',
+                    },
+                    'include': '/etc/php/fpm.d/*.conf',
                 },
             },
             'cli': {
@@ -111,6 +200,12 @@
     'cli': {
         'ini': {
    	        'opts': {},
+            'settings': {},
+        }
+    },
+    'apache2': {
+        'ini': {
+            'opts': {},
             'settings': {},
         }
     },

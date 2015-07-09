@@ -6,7 +6,7 @@
 
 {% set ppa_name        = salt['pillar.get']('php:ppa_name', 'ondrej/php5') %}
 
-php5-ppa:
+php54:
     pkgrepo.managed:
         - ppa: {{ ppa_name }}
     pkg.latest:
