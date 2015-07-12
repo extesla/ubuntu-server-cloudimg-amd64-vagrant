@@ -1,2 +1,2 @@
-{% set state = 'dev' %}
+{% set state = 'cli' %}
 {% include "php/installed.jinja" %}

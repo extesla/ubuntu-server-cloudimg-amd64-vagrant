@@ -1,2 +1,2 @@
-{% set state = 'dev' %}
+{% set state = 'geoip' %}
 {% include "php/installed.jinja" %}
