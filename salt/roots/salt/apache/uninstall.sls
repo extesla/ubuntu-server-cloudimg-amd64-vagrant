@@ -20,37 +20,5 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-#
-# Deploy.
-#
-base:
-  '*':
-    - default
-
-    ### Install Git
-    - git
-
-    ### Install Docker
-    - docker
-
-    ### Install Node
-    - node
-    - node-modules
-
-    ### Install PHP
-    - php.cli
-    - php.curl
-    - php.gd
-    - php.intl
-    - php.mcrypt
-    - php.memcached
-    - php.mongo
-
-    ### Install HHVM
-    #- hhvm
-
-    ### Install Composer
-    - composer
-
-    ### System Cleanup
-    - apache.uninstall
+apache2:
+  pkg.purged
